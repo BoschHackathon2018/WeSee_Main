@@ -138,6 +138,7 @@ public class HomePage extends Activity implements CvCameraViewListener2 {
 
                         mJavaDetector = new CascadeClassifier(
                                 mCascadeFile.getAbsolutePath());
+                        mJavaDetector.load( mCascadeFile.getAbsolutePath() );
                         if (mJavaDetector.empty()) {
                             Log.e(TAG, "Failed to load cascade classifier");
                             mJavaDetector = null;
@@ -147,6 +148,7 @@ public class HomePage extends Activity implements CvCameraViewListener2 {
 
                         mJavaDetectorEye = new CascadeClassifier(
                                 cascadeFileER.getAbsolutePath());
+                        mJavaDetectorEye.load(mCascadeFile.getAbsolutePath());
                         if (mJavaDetectorEye.empty()) {
                             Log.e(TAG, "Failed to load cascade classifier");
                             mJavaDetectorEye = null;
